@@ -10,8 +10,12 @@
             "dest": "/public/images/$1"
         },
         {
+            "src": "/minerals.php",
+            "dest": "/api/minerals.php"
+        },
+        {
             "src": "/(.*)",
-            "dest": "/api/$1"
+            "dest": "/public/index.php"
         }
     ]
 }
