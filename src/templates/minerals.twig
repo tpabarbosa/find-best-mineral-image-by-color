@@ -1,0 +1,51 @@
+
+{% extends "layout.twig" %}
+
+{% block content %}
+    <style>
+        .row {
+            display: flex;
+            align-items: center;
+        } 
+
+        .centered {
+            justify-content: center;
+        }
+        .cell {
+            width: 300px;
+        }
+        .color-cell {
+            height: 40px; 
+            width: 40px;
+        }
+
+    </style>
+
+    <nav>
+        <ul>
+            <li><a href="/">Search minerals by color</a></li>
+            <li><a href="/minerals.php" class='current'>List all minerals</a></li>
+        </ul>
+    </nav>
+    <h1>Listing all minerals</h1>
+    <div class="row">
+        <h3 class='cell'>Mineral Image</h3>
+        <h3 class='cell'>Extracted Colors</h3>
+    </div>
+    {% for image, colors in minerals %}
+        
+        <div class='row'>
+            <img src='images/{{ image }}' class='cell'/>
+            <div class='cell'>
+            {% for row in 0..(size - 1)  %}
+                <div class='row centered'>
+                {% for col in 0..(size - 1) %}
+                    <div class='color-cell' style='background-color:rgb({{ colors[row * size + col][0] }},{{ colors[row * size + col][1] }},{{ colors[row * size + col][2] }})'>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

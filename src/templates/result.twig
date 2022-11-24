@@ -1,0 +1,51 @@
+    <style>
+        .row {
+            display: flex;
+        }
+
+        .cell {
+            display: flex; 
+            border: 1px solid; 
+            padding: 20px; 
+            min-width:400px;
+            justify-content: space-between;
+        }
+    </style>
+
+<h2>Results: showing {{ quantity }} best matches</h2>
+<div style='display: flex; flex-direction: column;'>
+    <div class='row'>
+        <div class='cell'>
+            <h3>CIELAB color space</h3>
+        </div>
+        <div class='cell'>
+            <h3>RGB color space</h3>
+        </div>
+    </div>
+    {% for item in result %}
+        <div class='row'>
+            <div class='cell'>
+                <div>
+                    <h3>{{ loop.index }}</h3>
+                    <p>Delta-E</p>
+                    <p>{{ item.lab.distance }}</p> 
+                </div>
+                
+                <img src='images/{{ item.lab.image }}' style='height: 100px;'>
+                <div style='background-color: rgb({{ item.lab.color[0] }},{{ item.lab.color[1] }},{{ item.lab.color[2] }}); width: 100px; height: 100px;'>
+                </div>
+            </div>
+            
+            <div class='cell'>
+                <div>
+                    <h3>{{ loop.index }}</h3>
+                    <p>Weighted <br> Euclidian <br>Distance</p>
+                    <p>{{ item.rgb.distance }}</p> 
+                </div>
+                <img src='images/{{ item.rgb.image }}' style='height: 100px;'>
+                <div style='background-color: rgb({{ item.rgb.color[0] }},{{ item.rgb.color[1] }},{{ item.rgb.color[2] }}); width: 100px; height: 100px;'>
+                </div>
+            </div>   
+        </div> 
+    {% endfor %}
+</div>

@@ -1,0 +1,8 @@
+{
+    "[php]": {
+        "editor.defaultFormatter": "wongjn.php-sniffer",
+    },
+    "phpSniffer.standard": "PSR2",
+    "php.validate.executablePath": "C:/wamp64/bin/php/php7.4.9",
+    "intelephense.environment.phpVersion": "7.4.9"
+}

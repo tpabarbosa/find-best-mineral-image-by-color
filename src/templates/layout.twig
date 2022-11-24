@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Mineral by its color</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 20px;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            background-color: #ffcf00;
+            padding: 16px;
+            transition: background-color 0.5s;
+            border-radius: 16px;
+        }
+
+        nav a.current {
+            cursor: default;
+                border: 5px solid green;
+        }
+
+        nav a:hover:not(.current) {
+            background-color: #ff9f00;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="content">{% block content %}{% endblock %}</div>
+</body>
+</html>

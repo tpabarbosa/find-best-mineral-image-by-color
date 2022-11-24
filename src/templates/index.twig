@@ -1,0 +1,21 @@
+
+{% extends "layout.twig" %}
+
+{% block content %}
+    <nav>
+        <ul>
+            <li><a href="/" class='current'>Search minerals by color</a></li>
+            <li><a href="/minerals.php" >List all minerals</a></li>
+        </ul>
+    </nav>
+    <h1>Pick a color and choose how many matches you want.</h1>
+    <form method='post' action=''>
+        <input type='color' name='color' value='{{ color }}' />
+        <input type='number' min='1' max='5' name='quantity' value='{{ quantity }}' />
+        <input type='submit' name='submit' value='Search' />
+    </form>
+
+    {% if result %}
+        {{ include('result.twig') }}
+    {% endif %}
+{% endblock %}

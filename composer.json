@@ -1,0 +1,18 @@
+{
+    "name": "tpabarbosa/find-best-image-by-color",
+    "description": "given a group of minerals images, user picks a color and the algorithm must return a sorted list of best matches",
+    "autoload": {
+        "psr-4": {
+            "Tpabarbosa\\FindBestImageByColor\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tatiana Barbosa",
+            "email": "tpabarbosa@yahoo.com.br"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.4"
+    }
+}
